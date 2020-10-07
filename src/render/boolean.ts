@@ -1,11 +1,7 @@
 import { Context } from '../context/context'
 
 export function isTruthy (val: any, ctx: Context): boolean {
-  if ((val === null) && ctx && ctx.opts && ctx.opts.jsTruthy ){
-    console.log('matched jsTruthy and null');
-    return false;
-  }
-
+  if ((val === null) && ctx && ctx.opts && ctx.opts.jsTruthy ) return false;
   return !isFalsy(val, ctx)
 }
 
